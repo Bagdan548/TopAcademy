@@ -1,37 +1,41 @@
 #include <iostream>
-using namespace std;
-const int n = 3, m = 3;
+#include <ctime>
+#include <cstdlib>
  
-int main() 
+int main()
 {
-    setlocale(0, "RUS");
-    int arr[n][m];
-    double res[n] = { 0 };
- 
-    cout << "Задайте двумерный массив размером " << n << "X" << m <<endl;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cin >> arr[i][j];
-            res[i] += arr[i][j];
+    srand(static_cast<unsigned>(time(NULL)));
+    const int m=9;
+    int n;
+    int**a;
+    std::cout<<"Enter n: ";
+    std::cin>>n;
+    a=new int*[n];
+    for(int i=0; i<n; ++i)
+       a[i]=new int[m];
+    for(int i=0; i<n; ++i)
+    {
+        for(int j=0; j<m; ++j)
+        {
+             a[i][j] = rand() % 96 - 10;
         }
-        res[i] /= n;
-    }
-    
-    for (int i = 0; i < n; i++)
-    {
-        cout << "Cреднее арифметическое " << i << " строки: ";
-        cout << res[i] << " "<<endl;
-    }
- 
-    cout << endl;
-    
-    cout << "Одномерный массив: ";
-    for (int i = 0; i < n; i++)
-    {
-        cout << res[i] << " ";
-    }
- 
-    cout << endl;
-    system("pause");
-    return 0;
+     }
+     for(int i=0; i<n; ++i)
+     {
+         for(int j=0; j<m; ++j)
+         {
+             std::cout<<a[i][j]<<' ';
+         }
+         std::cout<<'\n';
+     }
+     for(int j=0; j<m; ++j)
+     {
+         int sum=0;
+         for(int i=0; i<n; ++i)
+         {
+             sum+=a[i][j];
+         }
+         std::cout<<"Среднее арифметическое  "<< j+1 <<" столбца : "<< static_cast<double>(sum)/m<<'\n';
+     }
+     return 0;
 }

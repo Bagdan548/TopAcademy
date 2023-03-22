@@ -1,15 +1,10 @@
-a=int(input())
-b=int(input())
-summ=0
-summch=0
-summ7=0
-for i in range(a,b+1):
-    if i%2!=0:
-        summ+=i
-    if i%2==0:
-        summch+=i
-    if i%7==0:
-        summ7+=i
-print("Сумма нечетных: ",summ)
-print("Сумма четных: ",summch)
-print("Сумма кратных на 7: ",summ7)
+n = int(input())
+if n > 1 and n < 100:
+    if ((n % 3 == 0) and (n % 5 == 0)):
+        print("Fizz Buzz")
+    elif n % 3 == 0:
+        print("Fizz")
+    elif n % 5 == 0:
+        print("Buzz")
+else:
+    print("Ошибка, введите с клавиатуры число в диапазоне от 1 до 100")

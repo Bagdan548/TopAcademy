@@ -1,0 +1,1 @@
+print((строка := input()).replace(поиск := input(), замена := input()))

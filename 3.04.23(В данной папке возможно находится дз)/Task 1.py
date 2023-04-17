@@ -16,7 +16,7 @@ else:
 for i in mas: 
     if i < 0:
         sumneg += i
-print("Сумма четных: ",sum2)
+print("Сумма четных: ",sum2) 
 print("Сумма нечетных: ", sum1)
 print("Сумма отрицательных: ", sumneg)
 print("Максимальное значение в массиве: ", max(mas))

@@ -1,9 +1,18 @@
 a=[]
 a=input()
+c=""
 
-for i in a:
-    print(i)
+#for i in a:
+#   print(i)
+c=c+a[0]
     
-    for i in range (0,len(a)):
-        if a[i].isupper():
+for i in range (1,len(a)):
+    if a[i]=="":
+        b=0
+    elif a[i].isupper():
+            c=c+"_"
             
+           c=c+str.lower(a[i])
+else:
+    c=c+a[i]
+print(c)
